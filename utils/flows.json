@@ -1,0 +1,33 @@
+[
+        {
+            "id" : 1,
+            "trigger" : "*",
+            "question": "Hello there hoq are you doing today?\n1. Search for Car.\n *Select any Option*",
+            "response": null
+        },
+
+        {
+            "id" : 2,
+            "trigger" : {
+                "onMessage": true,
+                "onState": false,
+                "value" : "1"
+            },
+            "question": "Which car are you looking for?",
+            "to-state": "search",
+            "response": null,
+            "parent" : 1
+        },
+        {
+            "id" : 3,
+            "trigger" : {
+                "onMessage": false,
+                "onState": true,
+                "value" : "search"
+            },
+            "response": "Here is Your desired Car!\nhttps://web.ghostprotocols.pk/search?[res]",
+            "to-state": "*",
+            "parent" : 2
+        }
+]
+ 

@@ -1,0 +1,8 @@
+# Ignore WebJS authentication directory
+.wwebjs_auth/
+
+# Ignore WebJS cache directory
+.wwebjs_cache/
+
+# Ignore Node.js modules directory
+node_modules/
