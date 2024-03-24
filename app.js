@@ -1,3 +1,3 @@
-const register = require("./utils/register");
+const register = require("./utils/ghostprotocols");
 
-register("1")
+register("ghost")

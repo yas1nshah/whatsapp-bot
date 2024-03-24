@@ -59,6 +59,8 @@ const  register = (id) => {
             if(message.body === "0")
             {
                 session.state = '*'
+                session.question.state =  null
+                session.question.id =  null
             }
             
             // ? Main Menu
@@ -227,37 +229,3 @@ const  register = (id) => {
 
 
 module.exports = register
-
-
-// client.on('message', async (message) => {
-//     const senderId = message.from; // Get sender's ID
-
-//     let session = sessions[senderId];
-
-//     if (!session) {
-//         // If no session exists, create a new one
-//         session = { state: 'initial' };
-//         sessions[senderId] = session;
-//     }
-
-   
-//     if (session.state === 'waiting_for_input') {
-//         // Handle user input based on the current state
-//         if (session.pendingAction === 'selecting_car') {
-//             // Here, you can handle the selected car
-//             const selectedCar = message.body.trim();
-//             session.state = 'car_selected';
-//             const keyword = encodeURIComponent(selectedCar);
-//             const link = `https://web.ghostprotocols.pk/search?keyword=${keyword}`;
-//             await message.reply(`Here is the link for ${selectedCar}: ${link}`);
-//         }
-//     } else if (message.body === "1") {
-//         session.state = 'waiting_for_input';
-//         session.pendingAction = 'selecting_car';
-//         await message.reply('Which car are you looking for? Please specify.');
-//     } else {
-//         // Handle other cases or initial state
-//         session.state = 'initial';
-//         await message.reply('Hi there. Welcome to Ghost Protocols!\nWhat are you here for today?\n1. Looking For a car?\n\nSelect one option!');
-//     }
-// });
